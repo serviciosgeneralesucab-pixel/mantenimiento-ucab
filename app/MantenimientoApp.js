@@ -75,11 +75,15 @@ function parseFrecuenciaDias(v) {
   }
   return null;
 }
-const PLAN_FREQ_OPTIONS = ["MENSUAL", "BIMESTRAL", "TRIMESTRAL", "CUATRIMESTRAL", "SEMESTRAL", "ANUAL"];
+const PLAN_FREQ_OPTIONS = ["MENSUAL", "BIMESTRAL", "TRIMESTRAL", "CUATRIMESTRAL", "SEMESTRAL", "ANUAL", "KILOMETRAJE", "POR CONDICION"];
+const FREQ_DISPLAY = {
+  MENSUAL: "Mensual", BIMESTRAL: "Bimestral", TRIMESTRAL: "Trimestral", CUATRIMESTRAL: "Cuatrimestral",
+  SEMESTRAL: "Semestral", ANUAL: "Anual", KILOMETRAJE: "Kilómetro", "POR CONDICION": "Por condición",
+};
 function freqLabel(word) {
   if (!word) return "Según condición";
   const w = String(word);
-  return w.charAt(0) + w.slice(1).toLowerCase();
+  return FREQ_DISPLAY[w] || w.charAt(0) + w.slice(1).toLowerCase();
 }
 function freqWordToMonths(word) {
   const norm = normalizeHeader(word);
