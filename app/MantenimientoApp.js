@@ -594,9 +594,9 @@ function RutinasTab({ mes, groups, defs, setDefs, inst, setInst }) {
     let imported = 0, skipped = 0;
     for (const sheetName of wb.SheetNames) {
       const rows = sheetToRows(wb, sheetName);
-      const header = findHeaderRow(rows, ["ACTIVIDAD"]);
+      const header = findHeaderRow(rows, ["ACTIVIDAD", "NOMBRE"]);
       if (!header) continue;
-      const idxNombre = colIndex(header.headers, ["ACTIVIDAD"]);
+      const idxNombre = colIndex(header.headers, ["ACTIVIDAD", "NOMBRE"]);
       const idxGrupo = colIndex(header.headers, ["AREA", "GRUPO"]);
       const idxFrecuencia = colIndex(header.headers, ["FRECUENCIA"]);
       const idxFecha = colIndex(header.headers, ["ULTIMA INTERVENCION", "ULTIMA EJECUCION"]);
@@ -799,9 +799,9 @@ function PlanesTab({ mes, groups, defs, setDefs, inst, setInst }) {
     let imported = 0, skipped = 0;
     for (const sheetName of wb.SheetNames) {
       const rows = sheetToRows(wb, sheetName);
-      const header = findHeaderRow(rows, ["ACTIVIDAD"]);
+      const header = findHeaderRow(rows, ["ACTIVIDAD", "NOMBRE"]);
       if (!header) continue;
-      const idxNombre = colIndex(header.headers, ["ACTIVIDAD"]);
+      const idxNombre = colIndex(header.headers, ["ACTIVIDAD", "NOMBRE"]);
       const idxGrupo = colIndex(header.headers, ["AREA", "GRUPO"]);
       const idxFecha = colIndex(header.headers, ["ULTIMA INTERVENCION", "ULTIMA EJECUCION"]);
       const idxFrecuencia = colIndex(header.headers, ["FRECUENCIA"]);
